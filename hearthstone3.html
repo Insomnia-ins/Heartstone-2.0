@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.enemy{
+			margin-top: 100px;
+			text-align: center;
+			height: 250px;
+		}
+		.player_img{
+			width:250px;
+			height: 350px;
+			left: 1600px;
+			top: 350px;
+			bottom: 0px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+			opacity: 0;
+
+		}
+		.enemy_img{
+			width:250px;
+			height: 350px;
+			left: 0px;
+			margin-right: ;
+			background-size: 100% 100%;
+			position: relative; ;
+			transition: 1s;
+			opacity:0;
+
+		}
+		.player{
+			text-align: center;
+			height: 250px;
+			margin-top: 150px;
+
+		}
+		.player_property{
+			position: absolute;
+			top:80%;
+
+
+		}
+		.enemy_name{
+			color: white; font-family: Arial;
+		}
+		.player_name{
+			color: white; font-family: Arial
+		}
+
+		.enemy2{
+			margin-top: 100px;
+			text-align:center;
+			height: 250px;
+		}
+		.player_img2{
+			width:250px;
+			height: 350px;
+			left: 1300px;
+			top: 350px;
+			bottom: 0px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+			opacity: 0;
+
+		}
+		.enemy_img2{
+			width:250px;
+			height: 350px;
+			left: 0px;
+			margin-right: ;
+			background-size: 100% 100%;
+			position: relative; ;
+			transition: 1s;
+			opacity:0;
+
+		}
+		.player2{
+			text-align: center;
+			height: 250px;
+			margin-top: 150px;
+
+		}
+		.player_property2{
+			position: absolute;
+			top:80%;
+
+
+		}
+		.enemy_name2{
+			color: white; font-family: Arial;
+		}
+		.player_name2{
+			color: white; font-family: Arial
+		}
+	</style>
+</head>
+<body style="background-image: none; background-size: 100% 100%; " class="bg">
+
+<img src="card.png" style="height: 300px; width: 300px; position: absolute; left: 100px;" class="card">
+
+<div style=" height: 1600px; background-color:; width: 1800px; margin-left: auto; margin-right:  auto;">
+	<div style="background-color:  ; height: 600px; width: 1800px; margin-left: auto; margin-right:  auto; display: flex; text-align: center;">
+	
+		<h1 style="color: white;">Враги</h1>
+	
+		<div class="enemy" >
+			<h1 class="enemy_name"></h1>
+
+			<div class="enemy_img" >
+				<h2 class="enemy_hp player_property" style="left: 10%;">0</h2>
+				<h2 class="enemy_damage player_property" style="left: 82%;">0</h2>
+			</div>	
+
+		</div>
+
+		<div class="enemy2" style="top:  " >
+			<h1 class="enemy_name2"></h1>
+
+			<div class="enemy_img2" >
+				<h2 class="enemy_hp2 player_property" style="left: 10%;">0</h2>
+				<h2 class="enemy_damage2 player_property" style="left: 82%;">0</h2>
+			</div>	
+
+		</div>
+	</div>
+
+
+	
+	<div style="background-color: ; height: 800px; width: 1800px; margin-left: auto; margin-right:  auto; display: flex; text-align: center;">
+	
+			<div style="color: white; position: absolute; ">Ты</div>
+	
+
+
+
+		<div class="player" >
+			<h1 class="player_name"></h1>
+		
+			<div class="player_img" >
+				<h2 class="player_hp player_property" style="left: 10%;">0</h2>
+				<h2 class="player_damage player_property" style="left: 82%;">0</h2>
+			</div>
+
+		</div>
+
+		<div class="player2" style="top:  " >
+			<h1 class="player_name2"></h1>
+		
+			<div class="player_img2" >
+				<h2 class="player_hp2 player_property" style="left: 10%;">0</h2>
+				<h2 class="player_damage2 player_property" style="left: 82%;">0</h2>
+			</div>
+
+		</div>
+		<img src="card.png" class="card2" style="height: 300px; width: 300px; position: absolute; left: 2100px ; top: 1200px;">
+
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+
+	let imgb = function(){
+
+		let x = Math.random() * 2;
+		let y = Math.round(x);
+		return y ;
+			
+	}
+
+	let bg = ["url(bg.jpg)", "url(bg2.jpg)", "url(bg3.jpg)"];
+
+	let card2 = document.querySelector(".card2");
+	let card = document.querySelector(".card");
+
+
+
+	let bgg = document.querySelector(".bg");
+
+	bgg.style.backgroundImage = bg[imgb()];
+
+
+	let player = document.querySelector(".player_img");
+	let enemy = document.querySelector(".enemy_img");
+
+
+	let player_n = document.querySelector(".player_name");
+	let enemy_n = document.querySelector(".enemy_name");
+
+	
+
+	let hpp = document.querySelector(".player_hp");
+	let hpe = document.querySelector(".enemy_hp");
+
+	let dmgr = document.querySelector(".player_damage");
+	let dmge = document.querySelector(".enemy_damage");
+
+
+
+
+
+	let player2 = document.querySelector(".player_img2");
+	let enemy2 = document.querySelector(".enemy_img2");
+
+
+	let player_n2 = document.querySelector(".player_name2");
+	let enemy_n2 = document.querySelector(".enemy_name2");
+
+	
+
+	let hpp2 = document.querySelector(".player_hp2");
+	let hpe2 = document.querySelector(".enemy_hp2");
+
+	let dmgr2 = document.querySelector(".player_damage2");
+	let dmge2 = document.querySelector(".enemy_damage2");
+
+
+	card2.onclick = function(){
+
+		player2.style.left = "900px";
+		player2.style.top = "0px";
+		player.style.left = "450px";
+		player.style.top = "0px";
+		player2.style.opacity = "1";
+		player.style.opacity = "1";
+
+	}
+
+	card.onclick = function(){
+
+		enemy2.style.left = "800px";
+		enemy2.style.top = "300px";
+		enemy.style.left = "350px";
+		enemy.style.top = "300px";
+		enemy2.style.opacity = "1";
+		enemy.style.opacity = "1";
+
+
+		setTimeout(attack,4000);
+		setTimeout(hpcheck,4000);
+		setTimeout(reload,8000);
+
+
+	}
+
+
+
+
+	let damageP = function(){
+
+		let y = Math.random() * 10;
+		let x = Math.round(y);
+		return x;
+			
+	}
+	let damageE = function(){
+
+		let d = Math.random() * 10;
+		let e = Math.round(d);
+		return e;
+			
+	}
+
+	let damagePP = function(){
+
+		let y = Math.random() * 10;
+		let x = Math.round(y);
+		return x;
+			
+	}
+	let damageEE = function(){
+
+		let d = Math.random() * 10;
+		let e = Math.round(d);
+		return e;
+			
+	}
+
+
+	let hpP = function(){
+
+		let y = Math.random() * 10;
+		let x = Math.round(y);
+		return x;
+			
+	}
+	let hpE = function(){
+
+		let d = Math.random() * 10;
+		let e = Math.round(d);
+		return e;
+			
+	}
+
+	let hpPP = function(){
+
+		let y = Math.random() * 10;
+		let x = Math.round(y);
+		return x;
+			
+	}
+	let hpEE = function(){
+
+		let d = Math.random() * 10;
+		let e = Math.round(d);
+		return e;
+			
+	}
+
+	let imgp = function(){
+
+		let e = Math.random() * 8;
+		let r = Math.round(e);
+		return r ;
+			
+	}
+
+	
+
+	let img = ["url(1.png)", "url(2.png)", "url(3.png)", "url(4.png)", "url(5.png)", "url(6.png)", "url(7.png)", "url(8.png)", "url(9.png)"];
+
+
+
+	
+
+
+
+	let pla = {
+		name : "Ты",
+		url : img[imgp()],
+		hp : hpP(),
+		dmg : damageP(),
+
+	}
+
+	let ene = {
+		name : "Враг",
+		url : img[imgp()],
+		hp : hpE(),
+		dmg : damageE(),
+			
+	}
+
+
+	let pla2 = {
+		name : "Ты",
+		url : img[imgp()],
+		hp : hpPP(),
+		dmg : damagePP(),
+
+	}
+
+	let ene2 = {
+		name : "Враг",
+		url : img[imgp()],
+		hp : hpEE(),
+		dmg : damageEE(),
+			
+	}
+
+	
+
+	
+
+
+	player.style.backgroundImage = pla.url;
+	enemy.style.backgroundImage = ene.url;
+
+	player2.style.backgroundImage = pla2.url;
+	enemy2.style.backgroundImage = ene2.url;
+
+
+	
+	
+
+
+	hpp.innerHTML = pla.hp;
+	hpe.innerHTML = ene.hp;
+
+	dmgr.innerHTML = pla.dmg; 
+	dmge.innerHTML = ene.dmg;
+
+	hpp2.innerHTML = pla2.hp;
+	hpe2.innerHTML = ene2.hp;
+
+	dmgr2.innerHTML = pla2.dmg; 
+	dmge2.innerHTML = ene2.dmg;
+
+
+
+
+
+	let attack = function(){
+
+		pla.hp = pla.hp - ene.dmg;
+		ene.hp = ene.hp - pla.dmg;
+
+		hpp.innerHTML = pla.hp;
+		hpe.innerHTML = ene.hp;
+
+		pla2.hp = pla2.hp - ene2.dmg;
+		ene2.hp = ene2.hp - pla2.dmg;
+
+		hpp2.innerHTML = pla2.hp;
+		hpe2.innerHTML = ene2.hp;
+			
+	}	
+
+	let hpcheck = function(){
+
+		if(pla.hp + pla2.hp  < ene.hp + ene2.hp){
+
+			player.style.opacity = "0";
+			player2.style.opacity = "0";
+			alert("Враг выйграл");
+     		 
+    	}
+
+    	if(ene.hp + ene2.hp < pla.hp + pla2.hp){
+
+			enemy.style.opacity = "0";
+			enemy2.style.opacity = "0";
+			alert("Ты выйграл");
+     		 
+    	}
+
+    }
+
+   let reload = function(){
+
+          window.location.reload();
+
+   }	
+		
+
+
+	
+		
+		
+	
+	</script>
+</body>
+</html>
+	
+
